@@ -45,9 +45,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Open a PR
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: chore/update-file
-          reviewers: aalear
+        run: gh pr create -B main -H chore/update-file --title 'File update' --body 'Auto-generated PR'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
           
