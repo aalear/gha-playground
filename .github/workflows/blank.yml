@@ -10,7 +10,6 @@ on:
 
 permissions:
   contents: write
-  pull-request: write
 
 jobs:
   pr:
@@ -20,7 +19,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Check out code
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
       - name: Generate new string
