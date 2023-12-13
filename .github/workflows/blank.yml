@@ -24,7 +24,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate new string
-        run: echo ${{ github.run_id }}-${{ github.run_attempt }} > ./my-file.txt
+        run: |
+          echo ${{ github.run_id }}-${{ github.run_attempt }} > ./my-file.txt
 
       - name: Commit changes
         run: |
