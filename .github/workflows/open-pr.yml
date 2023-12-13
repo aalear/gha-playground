@@ -47,7 +47,7 @@ jobs:
       - name: Open a PR
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: chore/update-file
           reviewers: aalear
           
