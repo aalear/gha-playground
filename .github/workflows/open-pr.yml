@@ -42,6 +42,7 @@ jobs:
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
 
+            git checkout -b ${{ env.BRANCH_NAME }}
             git add ./my-file.txt
 
             git commit -m 'New file contents'
