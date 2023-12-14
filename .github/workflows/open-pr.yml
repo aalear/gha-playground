@@ -16,6 +16,11 @@ jobs:
   pr:
     runs-on: ubuntu-latest
 
+    env:
+      BRANCH_NAME: chore/update-file
+      TITLE: File Update
+      BODY: Automatically generated file update
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -47,9 +52,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Update or Open a PR
         run: | 
-          gh pr view ${{ env.BRANCH_NAME }} && gh pr reopen ${{ env.BRANCH_NAME}} || gh pr create -B main -H ${{ env.BRANCH_NAME }} --title ${{ env.TITLE }} --body ${{ end.BODY }}
+          gh pr view ${{ env.BRANCH_NAME }} && gh pr reopen ${{ env.BRANCH_NAME}} || gh pr create -B main -H ${{ env.BRANCH_NAME }} --title ${{ env.TITLE }} --body ${{ env.BODY }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: chore/update-file
-          TITLE: 'File Update'
-          BODY: 'Automatically generated file update'
