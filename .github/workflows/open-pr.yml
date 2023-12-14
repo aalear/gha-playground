@@ -9,8 +9,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
   pull-requests: write
+  # needed to be able to edit existing PRs: https://github.com/cli/cli/issues/6274
+  repository-projects: read 
 
 jobs:
   pr:
