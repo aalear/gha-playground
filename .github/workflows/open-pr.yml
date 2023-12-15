@@ -26,9 +26,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Generate new string
-        run: |
-          echo ${{ github.run_id }}-${{ github.run_attempt }} > ./my-file.txt
+      #- name: Generate new string
+      #  run: |
+      #    echo ${{ github.run_id }}-${{ github.run_attempt }} > ./my-file.txt
 
       # Check for changes
       - name: Check for changes
