@@ -12,7 +12,7 @@ permissions:
   contents: write
   pull-requests: write
   # needed to be able to edit existing PRs: https://github.com/cli/cli/issues/6274
-  repository-projects: read 
+  #repository-projects: read 
 
 jobs:
   pr:
@@ -33,24 +33,6 @@ jobs:
       - name: Generate new string
         run: |
           echo ${{ github.run_id }}-${{ github.run_attempt }} > ./my-file.txt
-
-      #- name: Commit changes
-      #  run: |
-      #    set +e
-      #    git diff --exit-code --quiet ./my-file.txt
-#
- #         if [ $? -eq 1 ]
-  #        then
-   #         git config user.name 'github-actions[bot]'
-    #        git config user.email 'github-actions[bot]@users.noreply.github.com'
-#
- #           git checkout -b ${{ env.BRANCH_NAME }}
-  #          git add ./my-file.txt
-#
- #           git commit -m 'New file contents'
-  #        else 
-   #         echo "No changes detected"
-    #      fi
 
       # Runs a set of commands using the runners shell
       - name: Update or Open a PR
