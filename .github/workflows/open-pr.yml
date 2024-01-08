@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   pr:
+    if: github.event_name != 'workflow_dispatch' || github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
 
     env:
